@@ -22,8 +22,8 @@
                 <tr>
                 <th> <?php {echo $event->id;} ?></th>
                 <th> <?php {echo $event->date;} ?></th>
-                <th> <a href="/events/{{ Auth::user()->id }}/inputs" class="btn btn-primary btn-lg active" role="button">INSERT</a> </th>
-                <th> <a href="/events/{{ Auth::user()->id }}/som" class="btn btn-primary btn-lg active" role="button">SOM</a> </th>
+                <th> <a href="/events/<?php {echo $event->id;} ?>/inputs" class="btn btn-primary btn-lg active" role="button">INSERT</a> </th>
+                <th> <a href="/events/<?php {echo $event->id;} ?>/som" class="btn btn-primary btn-lg active" role="button">SOM</a> </th>
                 </tr>
                 @endforeach
             </tbody>
