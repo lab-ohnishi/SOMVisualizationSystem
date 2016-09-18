@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use DB;
+
 class EventsController extends Controller
 {
   public function __construct()
@@ -15,6 +17,8 @@ class EventsController extends Controller
 
   public function index()
   {
-    return view('events');
+    $events = DB::table('events')->get();
+
+    return view('events',['events' => $events ] );
   }
 }

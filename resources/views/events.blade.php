@@ -8,7 +8,26 @@
         <div class="panel-heading">Dashboard</div>
 
         <div class="panel-body">
-          You are logged in!
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>part</th>
+                <th>date</th>
+                <th>insert</th>
+                <th>view</th>
+              </tr>
+            </thead>
+            <tbody>
+                @foreach ($events as $event) 
+                <tr>
+                <th> <?php {echo $event->id;} ?></th>
+                <th> <?php {echo $event->date;} ?></th>
+                <th> <a href="/events/{{ Auth::user()->id }}/inputs" class="btn btn-primary btn-lg active" role="button">INSERT</a> </th>
+                <th> <a href="/events/{{ Auth::user()->id }}/som" class="btn btn-primary btn-lg active" role="button">SOM</a> </th>
+                </tr>
+                @endforeach
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
