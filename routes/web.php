@@ -17,4 +17,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/events/{id}/inputs', 'PerspectivesController@view');
+
 Route::get('/home', 'HomeController@index');

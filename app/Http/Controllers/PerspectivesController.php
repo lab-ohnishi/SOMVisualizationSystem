@@ -14,10 +14,12 @@ class PerspectivesController extends Controller
   {
     $this->middleware('auth');
   }
-  
-  public function index(){
-  $perspectives = DB::table('perspectives')->get();
-  return view('view',['perspectives' => $perspectives ] );
+
+  public function view(Request $request, $id){
+    $perspectives = DB::table('perspectives')->get();
+    $users = DB::table('users')->get();
+   // echo $id;
+    return view('view',['perspectives' => $perspectives ],['users' => $users]);
   }
 
 
