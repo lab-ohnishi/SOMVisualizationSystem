@@ -16,9 +16,8 @@ class PerspectivesController extends Controller
   }
 
   public function view(Request $request, $id){
-    $perspectives = DB::table('perspectives')->get();
     $users = DB::table('users')->get();
-   // echo $id;
+    $perspectives = DB::table('perspectives')->where('event_id', $id)->get();
     return view('view',['perspectives' => $perspectives ],['users' => $users]);
   }
 

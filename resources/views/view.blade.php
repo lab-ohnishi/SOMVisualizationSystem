@@ -12,7 +12,6 @@
             <thead>
               <tr>
                 <th>perspectives_id</th>
-                <th>Event</th>
                 <th>From</th>
                 <th>To</th>
                 <th>Pers01</th>
@@ -27,8 +26,9 @@
             <tbody>
               @foreach ($perspectives as $perspective) 
               <tr>
-                <th> <?php {echo $perspective->id;} ?></th>
-                <th> <?php {echo $perspective->event_id;} ?></th>
+                <th>
+                  <?php {echo $perspective->id;} ?>
+                </th>
                 <th> <?php {echo $perspective->from_id;} ?></th>
                 <th> <?php {echo $perspective->to_id;} ?></th>
                 <th> <?php {echo $perspective->pers01;} ?></th>
