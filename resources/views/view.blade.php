@@ -10,8 +10,11 @@
           Inputs View 
         </div>
         <div class="panel-body col-md-10">
-          <div class="col-md-4" align="right">
-            <a href="/<?php echo $_SERVER["REQUEST_URI"]; ?>/insert" class="btn btn-primary btn-lg active" role="button">INSERT</a>
+          <div class="col-md-8" align="right">
+          <a href="/events/<?php 
+          $event_id = preg_replace('/[^0-9]/', '', $_SERVER["REQUEST_URI"]);
+          echo $event_id;
+          ?>/inputs/insert " class="btn btn-primary btn-lg active" role="button">INSERT</a>
           </div>
           To <?php {echo $users[Auth::user()->id]->name;} ?>
           <table class="table table-striped">
