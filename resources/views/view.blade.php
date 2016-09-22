@@ -11,7 +11,7 @@
         </div>
         <div class="panel-body col-md-10">
           <div class="col-md-4" align="right">
-            <a href="/<?php {echo $_SERVER["REQUEST_URI"];} ?>/insert" class="btn btn-primary btn-lg active" role="button">INSERT</a>
+            <a href="/<?php echo $_SERVER["REQUEST_URI"]; ?>/insert" class="btn btn-primary btn-lg active" role="button">INSERT</a>
           </div>
           To <?php {echo $users[Auth::user()->id]->name;} ?>
           <table class="table table-striped">
