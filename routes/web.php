@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/events/{id}/inputs/insert', 'PerspectivesController@insert');
+Route::post('/events/{id}/inputs/insert', 'PerspectivesController@res');
+
+Route::get('/home', 'HomeController@index');
