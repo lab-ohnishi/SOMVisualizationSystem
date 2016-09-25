@@ -37,8 +37,9 @@ class PerspectivesController extends Controller
         'pers04'=>$pers04,
         'pers05'=>$pers05,
         'pers06'=>$pers06,
-        'pers07'=>$pers07
-    ]);
+        'pers07'=>$pers07,
+        ]);
+  //redirect 
   return redirect('home');
     
   }
@@ -46,7 +47,6 @@ class PerspectivesController extends Controller
   public function insert(Request $request, $id){
     $users = DB::table('users')->select('id', 'name')->get();
     $perspectives = DB::table('perspectives')->where('event_id', $id)->get();
-    echo Auth::user()->name;
     return view('insert',['perspectives' => $perspectives ],['users' => $users]);
   }
 }
