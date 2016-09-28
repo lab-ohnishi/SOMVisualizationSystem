@@ -39,8 +39,9 @@ class PerspectivesController extends Controller
         'pers06'=>$pers06,
         'pers07'=>$pers07,
         ]);
-  //redirect 
-  return redirect('home');
+        //redirect 
+        $url = "/events/"."$id"."/inputs/";
+  return redirect($url);
     
   }
 
