@@ -15,6 +15,7 @@ class PerspectivesController extends Controller
         $this->middleware('auth');
     }
   public function som(Request $request ,$id){
+    require_once("SOMBatchLearning.php");
     return view('som');
   }
 }

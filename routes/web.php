@@ -22,3 +22,7 @@ Route::get('/home', 'HomeController@index');
 Auth::routes();
 Route::get('/events/{id}/som', 'PerspectivesController@som');
 Route::get('/home', 'HomeController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
