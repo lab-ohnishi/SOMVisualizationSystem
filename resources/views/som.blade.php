@@ -4,11 +4,11 @@
 <?php
 session_start();
 
-
-$id = preg_replace('/[^0-9]/', '', $_SERVER["REQUEST_URI"]);
-$eventID = $id;
-
-if($id == 1){
+$fromName = "azumaya";
+$eventNum = 2;
+$eventID = preg_replace('/[^0-9]/', '', $_SERVER["REQUEST_URI"]);
+$id = 1;
+if($id == 0){
 $filename = "data0.txt";
 }else{
 $filename = "data".$id.".txt";
@@ -32,10 +32,8 @@ $fromNameNumber = getMyNumber($fromName);
     <meta charset="utf-8">
     <title>SOM Page</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="som_style_2.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/som_style_2.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css" />
-    <script src="jquery-ui-1.10.3.custom/js/jquery-1.9.1.js"></script>
-    <script type="text/javascript" src="js/som.js"></script>
     <script>
       <?php
       echo("var dataLocation=".json_encode($locationData).";\n");
@@ -71,7 +69,6 @@ $fromNameNumber = getMyNumber($fromName);
             <!--data selectbox-->
             <div id="data">
               <p>・評価結果</p>
-              <select id="dataSelectBox" class="selectpicker" data-style="btn-danger" name="dataSelect">
                 <?php
                 for($i=0; $i<count($locationData); $i++){
                 if($fromName == $locationData[$i][0] && $fromName == $locationData[$i][1])
@@ -80,22 +77,18 @@ $fromNameNumber = getMyNumber($fromName);
                 echo("<option value='${i}'>${i}.".$locationData[$i][0]."->".$locationData[$i][1]."</option>\n");
                 else if($locationData[$i][0] == $fromName)
                 echo("<option value='${i}'>${i}.".$locationData[$i][0]."->".$locationData[$i][1]."</option>\n");
-                else
-                echo("<option value='${i}'>${i}. 学生->".$locationData[$i][1]."</option>\n");
+  //              else
+  //              echo("<option value='${i}'>${i}. 学生->".$locationData[$i][1]."</option>\n");
                 }
                 ?>
-              </select>
             </div>
             <!--person selectbox-->
             <div id="person">
               <p>・評価者</p>
-              <select id="fromBox" class="selectpicker" data-style="btn-primary" name="fromSelect" size="1" multiple>
                 <?php
                 echo("<option value=\"".$fromName."\">".$fromName."</option>\n");
                 ?>
-              </select>
               <p>・評価された人</p>
-              <select id="toBox" class="selectpicker" data-style="btn-primary" name="toSelect" size="1" multiple>
                 <?php
                 $people = getPeople();
                 for($i=0; $i<count($people); $i++){
@@ -107,7 +100,6 @@ $fromNameNumber = getMyNumber($fromName);
                 }
                 }
                 ?>
-              </select>
             </div>
           </div><!--cont2-->
         </div><!--cont1-->
@@ -205,19 +197,6 @@ $fromNameNumber = getMyNumber($fromName);
   </body>
 </html>
 Contact GitHub API Training Shop Blog About
-
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="panel panel-default">
-        <div class="panel-heading">SOM View</div>
-
-        <div class="panel-body">
-          You are logged in!
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 @endsection
+    <script src="{{asset('/js/jquery-3.1.1.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('/js/som.js')}}"></script>

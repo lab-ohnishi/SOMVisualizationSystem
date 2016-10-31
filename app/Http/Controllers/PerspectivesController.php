@@ -7,6 +7,8 @@ use DB;
 use App\Http\Controllers\Controller;
 use Auth;
 use Illuminate\Support\Facades\Input;
+require dirname(__FILE__)."/SOMBatchLearning.php";
+require dirname(__FILE__)."/getData.php";
 
 class PerspectivesController extends Controller
 {
@@ -15,7 +17,6 @@ class PerspectivesController extends Controller
         $this->middleware('auth');
     }
   public function som(Request $request ,$id){
-    require_once("SOMBatchLearning.php");
     return view('som');
   }
 }

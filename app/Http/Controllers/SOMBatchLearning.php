@@ -45,7 +45,7 @@ class SOMBatchLearning{
     }
   }
   function loadData($dataFile,$targetName = null){
-    $fp = fopen($dataFile,'r');
+    $fp = fopen(dirname(__FILE__)."/$dataFile",'r');
     $i=0;
     $inData = null;
     fgetcsv($fp);
