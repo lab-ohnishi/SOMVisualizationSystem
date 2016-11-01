@@ -1,0 +1,15 @@
+html,body{
+    height: 100%;
+}
+
+div.container{
+    height: 100%;
+}
+
+div#report{
+    height: 100%;
+}
+
+object{
+    height: 100%;
+}
